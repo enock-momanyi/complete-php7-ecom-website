@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: /config/db_dump.sql
+  - source: ./config/db_dump.sql
     destination: /tmp/db_dump.sql
 hooks:
   BeforeInstall:
