@@ -47,5 +47,7 @@ export DB_DATABASE='ecommerce'
 export DB_PORT='3306'
 # export DB_SOCKET=''
 #populate database with data
+pwd
+ls
 mysql -u "anonymous" -p"password" ecommerce < ./config/db_dump.sql
 
