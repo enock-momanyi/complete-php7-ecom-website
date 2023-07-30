@@ -49,5 +49,5 @@ export DB_PORT='3306'
 #populate database with data
 pwd
 ls
-mysql -u "anonymous" -p"password" ecommerce < ./config/db_dump.sql
+mysql -u "anonymous" -p"password" ecommerce < ~/db_dump.sql
 
