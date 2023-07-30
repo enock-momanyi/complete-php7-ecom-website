@@ -2,16 +2,15 @@ version: 0.0
 os: linux
 files:
   - source: ./config/db_dump.sql
-    destination: /tmp/db_dump.sql
-hooks:
-  BeforeInstall:
-    - location: scripts/install_dependencies
-      timeout: 300
-      runas: root
-    - location: scripts/start_server
-      timeout: 300
-      runas: root
-  ApplicationStop:
-    - location: scripts/stop_server
-      timeout: 300
-      runas: root
+    destination: /tmp/
+BeforeInstall:
+  - location: scripts/install_dependencies
+    timeout: 300
+    runas: root
+  - location: scripts/start_server
+    timeout: 300
+    runas: root
+ApplicationStop:
+  - location: scripts/stop_server
+    timeout: 300
+    runas: root
