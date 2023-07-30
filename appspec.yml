@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /config/db_dump.sql
-    destination: ~/db_dump.sql
+    destination: /tmp/db_dump.sql
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies
