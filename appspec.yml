@@ -1,8 +1,8 @@
 version: 0.0
 os: linux
 files:
-  - source: ./config/db_dump.sql
-    destination: /tmp/
+  - source: ./
+    destination: /tmp/myapp/
 BeforeInstall:
   - location: scripts/install_dependencies
     timeout: 300
