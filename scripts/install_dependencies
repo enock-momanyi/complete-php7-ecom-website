@@ -47,5 +47,5 @@ export DB_DATABASE='ecommerce'
 export DB_PORT='3306'
 # export DB_SOCKET=''
 #populate database with data
-mysql -u "anonymous" -p"password" ecommerce < /tmp/db_dump.sql
+mysql -u "anonymous" -p"password" ecommerce < /tmp/myapp/config/db_dump.sql
 
