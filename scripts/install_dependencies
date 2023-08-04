@@ -6,7 +6,6 @@ sudo yum install -y httpd mariadb-server
 sudo systemctl start httpd
 sudo systemctl enable httpd
 # Install MariaDB server
-sudo yum install -y mariadb-server
 sudo systemctl start mariadb
 # Secure installation, set root password, and remove anonymous users
 sudo mysql_secure_installation <<EOF
@@ -49,6 +48,8 @@ export DB_DATABASE='ecommerce'
 export DB_PORT='3306'
 # export DB_SOCKET=''
 #populate database with data
+cd /var/www/html/
 composer install
+cd ~
 mysql -u "anonymous" -p"password" ecommerce < /var/www/html/config/db_dump.sql
 
