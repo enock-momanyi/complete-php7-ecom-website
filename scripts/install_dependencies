@@ -1,11 +1,13 @@
 #!/bin/bash
-sudo yum update
-sudo yum install -y nginx
-sudo yum install -y php
+sudo yum update -y
+sudo amazon-linux-extras install -y lamp-mariadb10.2-php7.2 php7.2
+sudo yum install -y httpd mariadb-server
 
+sudo systemctl start httpd
+sudo systemctl enable httpd
 # Install MariaDB server
 sudo yum install -y mariadb-server
-
+sudo systemctl start mariadb
 # Secure installation, set root password, and remove anonymous users
 sudo mysql_secure_installation <<EOF
 
@@ -48,5 +50,5 @@ export DB_DATABASE='ecommerce'
 export DB_PORT='3306'
 # export DB_SOCKET=''
 #populate database with data
-mysql -u "anonymous" -p"password" ecommerce < /tmp/myapp/config/db_dump.sql
+mysql -u "anonymous" -p"password" ecommerce < /var/www/html/config/db_dump.sql
 

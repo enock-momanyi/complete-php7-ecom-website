@@ -1,8 +1,8 @@
 version: 0.0
 os: linux
 files:
-  - source: ./
-    destination: /tmp/myapp/
+  - source: /
+    destination: /var/www/html/
 BeforeInstall:
   - location: scripts/install_dependencies
     timeout: 300
