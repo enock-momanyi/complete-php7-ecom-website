@@ -1,3 +1,5 @@
 #!/bin/bash
 #start server
-php -S localhost:8000
+
+cd /var/www/html/
+exec php -S 0.0.0.0:80 > /dev/null &
