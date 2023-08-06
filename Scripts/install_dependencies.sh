@@ -29,8 +29,8 @@ custom_db_password="password"
 
 mysql -u root -p"admin2" <<MYSQL_SCRIPT
 CREATE DATABASE IF NOT EXISTS $custom_db_name;
-CREATE USER '$custom_db_user'@'localhost' IDENTIFIED BY '$custom_db_password';
-GRANT ALL PRIVILEGES ON $custom_db_name.* TO '$custom_db_user'@'localhost';
+CREATE USER $custom_db_user@localhost IDENTIFIED BY '$custom_db_password';
+GRANT ALL PRIVILEGES ON $custom_db_name.* TO $custom_db_user@localhost WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 MYSQL_SCRIPT
 
@@ -54,5 +54,5 @@ export DB_PORT='3306'
 cd /var/www/html/
 composer install
 cd ~
-mysql -u "anonymous" -p"password" ecommerce < /var/www/html/config/db_dump.sql
+mysql -u anonymous -ppassword ecommerce < /var/www/html/config/db_dump.sql
 
