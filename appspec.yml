@@ -4,13 +4,13 @@ files:
   - source: /
     destination: /var/www/html/
 BeforeInstall:
-  - location: scripts/install_dependencies
+  - location: Scripts/install_dependencies
     timeout: 300
     runas: root
-  - location: scripts/start_server
+  - location: Scripts/start_server
     timeout: 300
     runas: root
 ApplicationStop:
-  - location: scripts/stop_server
+  - location: Scripts/stop_server
     timeout: 300
     runas: root
