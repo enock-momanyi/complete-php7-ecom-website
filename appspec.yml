@@ -16,4 +16,3 @@ hooks:
     - location: Scripts/stop_server.sh
       timeout: 900
       runas: root
-      
