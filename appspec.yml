@@ -4,14 +4,15 @@ files:
   - source: /
     destination: /var/www/html/
 file_exists_behavior: OVERWRITE
-BeforeInstall:
-  - location: Scripts/install_dependencies.sh
-    timeout: 300
-    runas: root
-  - location: Scripts/start_server.sh
-    timeout: 300
-    runas: root
-ApplicationStop:
-  - location: Scripts/stop_server.sh
-    timeout: 300
-    runas: root
+hooks:
+  BeforeInstall:
+    - location: Scripts/install_dependencies.sh
+      timeout: 300
+      runas: root
+    - location: Scripts/start_server.sh
+      timeout: 300
+      runas: root
+  ApplicationStop:
+    - location: Scripts/stop_server.sh
+      timeout: 300
+      runas: root
