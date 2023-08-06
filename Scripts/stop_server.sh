@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #!/bin/bash
-isExistApp = `pgrep httpd`
+isExistApp = `pgrep php`
 if [[ -n  $isExistApp ]]; then
-    service httpd stop        
+    service php stop        
 fi
