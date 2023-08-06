@@ -38,6 +38,7 @@ echo "Custom database '$custom_db_name' and user '$custom_db_user' created with 
 #Install composer
 
 cd ~
+sudo yum install -y php7.2-mbstring php7.2-apcu php7.2-memcached php7.2-redis
 curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php
 sudo php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
